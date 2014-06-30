@@ -71,7 +71,7 @@ void CriarProcesso(Processo *p)
 	gets(p->NomeCliente);
 	printf("Insira o RG do Cliente: ");
 	gets(p->RGCliente);
-	printf("Insira o endereÃ§o do Cliente: ");
+	printf("Insira o endereço do Cliente: ");
 	gets(p->EnderecoCliente);
 	printf("Insira o telefone do Cliente: ");
 	gets(p->TelefoneCliente);
