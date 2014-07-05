@@ -1,0 +1,17 @@
+Ao iniciar a aplicação, aparecerá um Menu com as possíveis opções a serem escolhidas.
+
+0 - Inserir novo Processo        
+1 - Apagar Ultimo Processo       
+2 - Apagar um Processo pelo ID   
+3 - Exibir Pilha de Processos    
+4 - Exibir por ID                
+5 - Exibir proximo Processo      
+6 - Exibir ultimo Processo       
+7 - Tamanho da Pilha             
+8 - Limpar Pilha                 
+9 - Organiza por Nome de Mercado 
+
+- Ao selecionar a Opção "0", o programa pedirá que seja informado todos os dados do processo e depois retornará ao Menu.
+- As opções "2", "4" e "9" irá pedir para que seja informado o ID do processo para que seja efetuada a ação.
+- No menu também possui a "ANALISE", que são os tempos de execução de cada função. Toda vez que uma função é chamada novamente, esse tempo é zerado e recomeça a contagem.
+- Nos tempos das analises não é considerado o comando 'scanf'. Quando a função 'scanf' é chamada, a contagem é pausada e continua na linha seguinte. Evitando o tempo de espera do teclado.
