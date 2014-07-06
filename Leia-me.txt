@@ -1,3 +1,5 @@
+:: Como usar.
+
 Ao iniciar a aplicação, aparecerá um Menu com as possíveis opções a serem escolhidas.
 
 0 - Inserir novo Processo        
@@ -15,3 +17,7 @@ Ao iniciar a aplicação, aparecerá um Menu com as possíveis opções a serem escolh
 - As opções "2", "4" e "9" irá pedir para que seja informado o ID do processo para que seja efetuada a ação.
 - No menu também possui a "ANALISE", que são os tempos de execução de cada função. Toda vez que uma função é chamada novamente, esse tempo é zerado e recomeça a contagem.
 - Nos tempos das analises não é considerado o comando 'scanf'. Quando a função 'scanf' é chamada, a contagem é pausada e continua na linha seguinte. Evitando o tempo de espera do teclado.
+
+:: Testes.
+
+- Para os testes basta inserir novos processos e selecionar alguma opção do Menu.

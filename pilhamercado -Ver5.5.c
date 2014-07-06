@@ -11,7 +11,7 @@ typedef struct proc
 	char RGCliente [12];
 	char TelefoneCliente [15];
 	float ValorCheque;
-	char DataCheque[8];
+	char DataCheque[11];
 	char NomeMercado [31];
 	struct proc *prox;
 } Processo;
@@ -84,7 +84,6 @@ void Menu(Processo *Pilha)                              //Menu e chamada para as
         printf("\n\tOpcao: ");
         fflush(stdin);
         scanf("%d", &op);
-        fflush(stdin);
         switch(op)
         {
             case 0: // Inserir novo Processo
@@ -102,7 +101,7 @@ void Menu(Processo *Pilha)                              //Menu e chamada para as
                 case 2: // Apagar Ultimo Processo
                 {
                     ApagarID(Pilha);
-            fflush(stdin);                system("Pause");
+                    system("Pause");
                     break;
                 }
             case 3: // Excluir um Processo pelo ID
@@ -133,7 +132,6 @@ void Menu(Processo *Pilha)                              //Menu e chamada para as
                 {
                     Clock_ExibeTamanho=clock();
                     printf("A pilha possui %d elementos. \n", QuantidadeProcessos);
-                    fflush(stdin);
                     Clock_ExibeTamanho = clock() - Clock_ExibeTamanho;
                     system("Pause");
                     break;
@@ -161,16 +159,15 @@ void Menu(Processo *Pilha)                              //Menu e chamada para as
 void ExibeNo(Processo *No)                              //Chamada so para exibir um No
 {
     printf("\n%c ID: %d\n",16, No->ID);
-    printf("|  %c Informacoes do Cheque:\n",26);
-    printf("|\tValor do Cheque: R$ %.2f\n", No->ValorCheque);
-    printf("|\tData do Cheque:  %s\n", No->DataCheque);
-    printf("|\tNome do Mercado: %s\n", No->NomeMercado);
-    printf("|  %c Informacoes do Cliente:\n",26);
-    printf("|\tNome: %s\n", No->NomeCliente);
-    printf("|\tRG: %s\n", No->NomeCliente);
-    printf("|\tEndereço: %s\n", No->EnderecoCliente);
-    printf("|\tTelefone: %s\n", No->TelefoneCliente);
-    fflush(stdin);
+    printf("%cCheque:\n",204);
+    printf("%c\tValor do Cheque: R$ %.2f\n",186, No->ValorCheque);
+    printf("%c\tData do Cheque:.... %s\n",186, No->DataCheque);
+    printf("%c\tNome do Mercado:... %s\n",186, No->NomeMercado);
+    printf("%cCliente:\n",204);
+    printf("%c\tNome:.............. %s\n",186, No->NomeCliente);
+    printf("%c\tRG:................ %s\n",186, No->RGCliente);
+    printf("%c\tEndereço:.......... %s\n",186, No->EnderecoCliente);
+    printf("%c\tTelefone:.......... %s\n",186, No->TelefoneCliente);
 }
 
 int teste_vazia(Processo *Pilha)                        // Testa se a pilha está vazia. Se o primeiro elemento aponta para NULL quer dizer que a pilha não tem elementos
@@ -322,7 +319,7 @@ void EmpilharProcesso(Processo *Pilha)                  //Iserção de nós na pilh
         scanf("%f", &novo->ValorCheque);
         printf("Data do Cheque: ");
         fflush(stdin);
-        gets(novo->DataCheque);
+        scanf("\n\r%[^\n]", &novo->DataCheque);
         printf("Nome do Estabelecimento: ");
         scanf("\n\r%[^\n]", &novo->NomeMercado);
         printf("Nome do Cliente: ");
