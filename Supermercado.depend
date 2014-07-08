@@ -1,0 +1,16 @@
+# depslib dependency file v1.0
+1404781568 source:c:\users\sony\desktop\supermercado\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<conio.h>
+	<string.h>
+	"funcoes.h"
+
+1404782184 c:\users\sony\desktop\supermercado\funcoes.h
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<conio.h>
+	<string.h>
+
