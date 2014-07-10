@@ -1,6 +1,6 @@
 :: Como usar.
 
-Ao iniciar a aplicaÁ„o, aparecer· um Menu com as possÌveis opÁıes a serem escolhidas.
+Para utilizar a vers√£o 5.5 do nosso software, inicialmente devemos selecionar uma das 10 op√ß√µes v√°lidas do menu:
 
 0 - Inserir novo Processo        
 1 - Apagar Ultimo Processo       
@@ -13,11 +13,8 @@ Ao iniciar a aplicaÁ„o, aparecer· um Menu com as possÌveis opÁıes a serem escolh
 8 - Limpar Pilha                 
 9 - Organiza por Nome de Mercado 
 
-- Ao selecionar a OpÁ„o "0", o programa pedir· que seja informado todos os dados do processo e depois retornar· ao Menu.
-- As opÁıes "2", "4" e "9" ir· pedir para que seja informado o ID do processo para que seja efetuada a aÁ„o.
-- No menu tambÈm possui a "ANALISE", que s„o os tempos de execuÁ„o de cada funÁ„o. Toda vez que uma funÁ„o È chamada novamente, esse tempo È zerado e recomeÁa a contagem.
-- Nos tempos das analises n„o È considerado o comando 'scanf'. Quando a funÁ„o 'scanf' È chamada, a contagem È pausada e continua na linha seguinte. Evitando o tempo de espera do teclado.
-
-:: Testes.
-
-- Para os testes basta inserir novos processos e selecionar alguma opÁ„o do Menu.
+Ao final da execu√ß√£o da opera√ß√£o desejada, o programa mostra ao usu√°rio o tempo de execu√ß√£o da opera√ß√£o, localizado ao lado do menu.
+Inicialmente devemos inserir algum elemento, pois com a pilha vazia somente ser√° poss√≠vel executar a opera√ß√£o n√∫mero 7. Tendo sempre ao menos um elemento na pilha, podemos executar qualquer uma das dez opera√ß√µes dispon√≠veis pelo software.
+Para executar uma opera√ß√£o, devemos digitar o n√∫mero correspondente √† mesma no menu. Quando solicitado, o usu√°rio deve digitar os dados que o programa pede como entrada.
+O usu√°rio tem a possibilidade de inserir in√∫meros elementos na pillha de dados, at√© o momento em que houver mem√≥ria dispon√≠vel.
+O programa fica em la√ßo, sempre pedindo ao usu√°rio para executar uma nova opera√ß√£o. Para sair do programa, devemos finalizar utilizando o S.O.(bot√£o fechar ‚ÄòX‚Äô).
