@@ -14,3 +14,21 @@
 	<conio.h>
 	<string.h>
 
+1404993290 source:c:\users\carla.melo\documents\github\processossupermercado\funcoes.c
+	"funcoes.h"
+
+1404992617 c:\users\carla.melo\documents\github\processossupermercado\funcoes.h
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<conio.h>
+	<string.h>
+
+1404992617 source:c:\users\carla.melo\documents\github\processossupermercado\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<conio.h>
+	<string.h>
+	"funcoes.h"
+
