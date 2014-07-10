@@ -161,7 +161,6 @@ void ExibirID(Processo *Pilha)                          // Exibe somente o proce
     Clock_Pause = clock();
 
 	Processo *Pos = Pilha->prox;
-	Processo *Ant = Pilha;
     int LocalizarEsteID;
 
     printf("Informe o ID do Processo que deseja ver: ");
@@ -174,7 +173,6 @@ void ExibirID(Processo *Pilha)                          // Exibe somente o proce
         {
             if(LocalizarEsteID != Pos->ID)      // Se entrar aqui � pq � diferente, ent�o avan�a os n�s da Pilha principal.
             {
-                Ant = Ant->prox;
                 Pos = Pos->prox;
             }
             else
