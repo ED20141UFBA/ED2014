@@ -21,6 +21,7 @@ void Menu(Processo *Pilha)                              //Menu e chamada para as
         printf("    Selecione a operacao desejada:   \n\n");
         printf(" %c%c%c%c%c%c%c%c%c%c%c%c%c%c%c MENU %c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c ANALISE %c%c%c%c%c%c%c%c%c%c%c\n",201,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,203,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,187);
         printf(" %c                                  %c                             %c\n",186,186,186);
+<<<<<<< HEAD
         printf(" %c 0 - Inserir novo Processo        %c %c Tempo Execucao: %f  %c\n",186,186,26, ((double)(Clock_Insere)/CLOCKS_PER_SEC),186);
         printf(" %c 1 - Apagar Ultimo Processo       %c %c Tempo Execucao: %f  %c\n",186,186,26, ((double)(Clock_Apaga)/CLOCKS_PER_SEC),186);
         printf(" %c 2 - Apagar um Processo pelo ID   %c %c Tempo Execucao: %f  %c\n",186,186,26, ((double)(Clock_ApagaID)/CLOCKS_PER_SEC),186);
@@ -31,6 +32,18 @@ void Menu(Processo *Pilha)                              //Menu e chamada para as
         printf(" %c 7 - Tamanho da Pilha             %c %c Tempo Execucao: %f  %c\n",186,186,26, ((double)(Clock_ExibeTamanho)/CLOCKS_PER_SEC),186);
         printf(" %c 8 - Limpar Pilha                 %c %c Tempo Execucao: %f  %c\n",186,186,26, ((double)(Clock_LimpaTudo)/CLOCKS_PER_SEC),186);
         printf(" %c 9 - Organiza por Nome de Mercado %c %c Tempo Execucao: %f  %c\n",186,186,26, ((double)(Clock_OrganizaPorNome)/CLOCKS_PER_SEC),186);
+=======
+        printf(" %c 0 - Inserir novo Processo        %c %c Tempo Execucao: %f %c\n",186,186,26, ((double)(Clock_Insere)/CLOCKS_PER_SEC),186);
+        printf(" %c 1 - Apagar ultimo Processo       %c %c Tempo Execucao: %f %c\n",186,186,26, ((double)(Clock_Apaga)/CLOCKS_PER_SEC),186);
+        printf(" %c 2 - Apagar um Processo pelo ID   %c %c Tempo Execucao: %f %c\n",186,186,26, ((double)(Clock_ApagaID)/CLOCKS_PER_SEC),186);
+        printf(" %c 3 - Exibir Pilha de Processos    %c %c Tempo Execucao: %f %c\n",186,186,26, ((double)(Clock_ExibeTudo)/CLOCKS_PER_SEC),186);
+        printf(" %c 4 - Exibir por ID                %c %c Tempo Execucao: %f %c\n",186,186,26, ((double)(Clock_ExibeID)/CLOCKS_PER_SEC),186);
+        printf(" %c 5 - Exibir proximo Processo      %c %c Tempo Execucao: %f %c\n",186,186,26, ((double)(Clock_ExibeProximo)/CLOCKS_PER_SEC),186);
+        printf(" %c 6 - Exibir ultimo Processo       %c %c Tempo Execucao: %f %c\n",186,186,26, ((double)(Clock_ExibeUltimo)/CLOCKS_PER_SEC),186);
+        printf(" %c 7 - Tamanho da Pilha             %c %c Tempo Execucao: %f %c\n",186,186,26, ((double)(Clock_ExibeTamanho)/CLOCKS_PER_SEC),186);
+        printf(" %c 8 - Limpar Pilha                 %c %c Tempo Execucao: %f %c\n",186,186,26, ((double)(Clock_LimpaTudo)/CLOCKS_PER_SEC),186);
+        printf(" %c 9 - Organiza por Nome de Mercado %c %c Tempo Execucao: %f %c\n",186,186,26, ((double)(Clock_OrganizaPorNome)/CLOCKS_PER_SEC),186);
+>>>>>>> origin/master
         printf(" %c                                  %c                             %c\n",186,186,186);
         printf(" %c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c\n",200,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,202,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,188);
         printf("\n\tOpcao: ");

@@ -7,10 +7,9 @@
 
 
        
-int main()	// Função principal
+int main()	// Funï¿½ï¿½o principal
 {
 	
-       int opcao;
 	Processo *Pilha = (Processo *) malloc(sizeof(Processo));
 
 	if(Pilha== NULL){
