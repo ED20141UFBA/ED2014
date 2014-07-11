@@ -1,0 +1,19 @@
+# depslib dependency file v1.0
+1405040239 source:c:\users\igor\documents\github\processossupermercado\analisecomplexidade\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<conio.h>
+	<string.h>
+	"funcoes.h"
+
+1405058236 c:\users\igor\documents\github\processossupermercado\analisecomplexidade\funcoes.h
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<conio.h>
+	<string.h>
+
+1405058216 source:c:\users\igor\documents\github\processossupermercado\analisecomplexidade\funcoes.c
+	"funcoes.h"
+

@@ -6,10 +6,10 @@
 #include "funcoes.h"
 
 
-
-int main()	// Funcao principal
+       
+int main()	// Fun��o principal
 {
-
+	
 	Processo *Pilha = (Processo *) malloc(sizeof(Processo));
 
 	if(Pilha== NULL){

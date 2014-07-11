@@ -1,9 +1,9 @@
 #include "funcoes.h"
-int GeraID = 0; // A cada Processo novo sera acrescido um valor, assim o processo tera um ID unico;
+
+int MAX=0;
+
+int GeraID = 0; // A cada Processo novo ser� acrescido um valor, assim o processo ter� um ID �nico;
 float Clock_Insere=0, Clock_Apaga=0, Clock_ApagaID=0, Clock_ExibeTudo=0,Clock_ExibeID=0, Clock_ExibeProximo=0, Clock_ExibeUltimo=0, Clock_ExibeTamanho=0, Clock_LimpaTudo=0, Clock_OrganizaPorNome=0;
-// Onde tem Clock eh somente para contabilizar o tempo.
-
-
 int QuantidadeProcessos;
 
 void Inicializar(Processo *Pilha)	                    //Inicia a pilha
@@ -12,11 +12,15 @@ void Inicializar(Processo *Pilha)	                    //Inicia a pilha
 	QuantidadeProcessos=0;
 }
 
-void Menu(Processo *Pilha)                              //Menu e chamada para as funcoes
+void Menu(Processo *Pilha)                              //Menu e chamada para as fun��es
 {
-
-	//clock_t inicio, fim;
+	int loop;
+//	clock_t inicio, fim;
 	int op;
+	char Mercado[31];
+
+	printf("Informe o tamanho da Pilha: ");
+	scanf("%d", &MAX);
 
 	while(1)
 	{
@@ -24,18 +28,16 @@ void Menu(Processo *Pilha)                              //Menu e chamada para as
         printf("    Selecione a operacao desejada:   \n\n");
         printf(" %c%c%c%c%c%c%c%c%c%c%c%c%c%c%c MENU %c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c ANALISE %c%c%c%c%c%c%c%c%c%c%c\n",201,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,203,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,187);
         printf(" %c                                  %c                             %c\n",186,186,186);
-
-        printf(" %c 0 - Inserir novo Processo        %c %c Tempo Execucao: %f  %c\n",186,186,26, ((double)(Clock_Insere)/CLOCKS_PER_SEC),186);
-        printf(" %c 1 - Apagar Ultimo Processo       %c %c Tempo Execucao: %f  %c\n",186,186,26, ((double)(Clock_Apaga)/CLOCKS_PER_SEC),186);
+        printf(" %c 0 - xInserir novo Processo        %c %c Tempo Execucao: %f  %c\n",186,186,26, ((double)(Clock_Insere)/CLOCKS_PER_SEC),186);
+        printf(" %c 1 - xApagar Ultimo Processo       %c %c Tempo Execucao: %f  %c\n",186,186,26, ((double)(Clock_Apaga)/CLOCKS_PER_SEC),186);
         printf(" %c 2 - Apagar um Processo pelo ID   %c %c Tempo Execucao: %f  %c\n",186,186,26, ((double)(Clock_ApagaID)/CLOCKS_PER_SEC),186);
-        printf(" %c 3 - Exibir Pilha de Processos    %c %c Tempo Execucao: %f  %c\n",186,186,26, ((double)(Clock_ExibeTudo)/CLOCKS_PER_SEC),186);
+        printf(" %c 3 - -Exibir Pilha de Processos    %c %c Tempo Execucao: %f  %c\n",186,186,26, ((double)(Clock_ExibeTudo)/CLOCKS_PER_SEC),186);
         printf(" %c 4 - Exibir por ID                %c %c Tempo Execucao: %f  %c\n",186,186,26, ((double)(Clock_ExibeID)/CLOCKS_PER_SEC),186);
         printf(" %c 5 - Exibir proximo Processo      %c %c Tempo Execucao: %f  %c\n",186,186,26, ((double)(Clock_ExibeProximo)/CLOCKS_PER_SEC),186);
         printf(" %c 6 - Exibir ultimo Processo       %c %c Tempo Execucao: %f  %c\n",186,186,26, ((double)(Clock_ExibeUltimo)/CLOCKS_PER_SEC),186);
         printf(" %c 7 - Tamanho da Pilha             %c %c Tempo Execucao: %f  %c\n",186,186,26, ((double)(Clock_ExibeTamanho)/CLOCKS_PER_SEC),186);
-        printf(" %c 8 - Limpar Pilha                 %c %c Tempo Execucao: %f  %c\n",186,186,26, ((double)(Clock_LimpaTudo)/CLOCKS_PER_SEC),186);
-        printf(" %c 9 - Organiza por Nome de Mercado %c %c Tempo Execucao: %f  %c\n",186,186,26, ((double)(Clock_OrganizaPorNome)/CLOCKS_PER_SEC),186);
-
+        printf(" %c 8 - xLimpar Pilha                 %c %c Tempo Execucao: %f  %c\n",186,186,26, ((double)(Clock_LimpaTudo)/CLOCKS_PER_SEC),186);
+        printf(" %c 9 - xOrganiza por Nome de Mercado %c %c Tempo Execucao: %f  %c\n",186,186,26, ((double)(Clock_OrganizaPorNome)/CLOCKS_PER_SEC),186);
         printf(" %c                                  %c                             %c\n",186,186,186);
         printf(" %c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c\n",200,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,202,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,188);
         printf("\n\tOpcao: ");
@@ -45,13 +47,24 @@ void Menu(Processo *Pilha)                              //Menu e chamada para as
         {
             case 0: // Inserir novo Processo
                 {
-                    EmpilharProcesso(Pilha);
+                	Clock_Insere = clock();
+                	for(loop=0; loop<MAX; loop++)
+					{
+						EmpilharProcesso(Pilha, loop);
+						if(loop % 5000 == 0)
+							printf("\naqui: %d", loop);
+					}
+					printf("\n");
+					Clock_Insere = clock()- Clock_Insere;
                     system("Pause");
                     break;
                 }
             case 1: // Inserir novo Processo
                 {
-                    Apagar(Pilha);
+                	Clock_Apaga = clock();
+                	for(loop=0; loop<MAX; loop++)
+						Apagar(Pilha);
+                    Clock_Apaga = clock() - Clock_Apaga;
                     system("Pause");
                     break;
                 }
@@ -102,7 +115,12 @@ void Menu(Processo *Pilha)                              //Menu e chamada para as
                 }
             case 9: // Organiza por Nome de Mercado
                 {
-                    OrganizaProcessoPorNomeMercado(Pilha);
+               	    printf("Informe o nome do Estabelecimento para reordenar no topo: ");
+					fflush(stdin);
+					gets(Mercado);
+                	Clock_OrganizaPorNome = clock();
+                    OrganizaProcessoPorNomeMercado(Pilha, Mercado);
+                    Clock_OrganizaPorNome = clock() - Clock_OrganizaPorNome;
                     system("Pause");
                     break;
                 }
@@ -127,7 +145,7 @@ void ExibeNo(Processo *No)                              //Chamada so para exibir
     printf("%c\tTelefone:.......... %s\n",186, No->TelefoneCliente);
 }
 
-int teste_vazia(Processo *Pilha)                        // Testa se a pilha esta vazia. Se o primeiro elemento aponta para NULL quer dizer que a pilha nao tem elementos
+int teste_vazia(Processo *Pilha)                        // Testa se a pilha est� vazia. Se o primeiro elemento aponta para NULL quer dizer que a pilha n�o tem elementos
 {
 
 	if(Pilha->prox == NULL)
@@ -136,17 +154,17 @@ int teste_vazia(Processo *Pilha)                        // Testa se a pilha esta
 		return 0;
 }
 
-void ExibirProcessos(Processo *Pilha)                   // Funcao de impressao da pilha
+void ExibirProcessos(Processo *Pilha)                   // Fun��o de impress�o da pilha
 {
     Clock_ExibeTudo=0;
     Clock_ExibeTudo = clock();
-	Processo *aux= Pilha->prox;							// Cria um ponteiro aux
+	Processo *aux= Pilha->prox;
 
-	if(teste_vazia(Pilha))								// Verifica se a pilha ta vazia, se a funcao teste_vazia retornar '1', ta vazia
+	if(teste_vazia(Pilha))
     {
 		printf("A pilha esta vazia. \n");
 	}
-	else												// senao, enquanto aux nao chegar ate o fim da fila (NULL), vai imprimindo cada no.
+	else
     {
 		while( aux != NULL)
         {
@@ -172,9 +190,9 @@ void ExibirID(Processo *Pilha)                          // Exibe somente o proce
     Clock_ExibeID = clock();
     if(Pilha->prox != NULL)
     {
-        while(Pos->prox != NULL)            //Percorre a Pilha Principal ate o penultimo elemento, pois qnd o proximo apontar para NULL, nao entrara no while, sera tratado if logo abaixo.
+        while(Pos->prox != NULL)            //Percorre a Pilha Principal at� o ultimo elemento apontar para NULL.
         {
-            if(LocalizarEsteID != Pos->ID)      // Se entrar aqui é pq é diferente, entao avanca os nos da Pilha principal.
+            if(LocalizarEsteID != Pos->ID)      // Se entrar aqui � pq � diferente, ent�o avan�a os n�s da Pilha principal.
             {
                 Pos = Pos->prox;
             }
@@ -185,7 +203,7 @@ void ExibirID(Processo *Pilha)                          // Exibe somente o proce
                 return;
             }
         }
-        if(LocalizarEsteID == Pos->ID)			// Verifica se o ID para qual Pos aponta é igual ao informado pelo usuario.
+        if(LocalizarEsteID == Pos->ID)
         {
             ExibeNo(Pos);
             Clock_ExibeID = clock() - Clock_ExibeID + Clock_Pause;
@@ -207,7 +225,7 @@ void ExibirProximoProcesso(Processo *Pilha)             //Exibe o processo no TO
 	else
 	{
 		Processo *Pos = Pilha->prox;
-		while(Pos->prox != NULL)            //Percorre a Pilha Principal ate o ultimo elemento apontar para NULL.
+		while(Pos->prox != NULL)            //Percorre a Pilha Principal at� o ultimo elemento apontar para NULL.
 		{
 		   Pos = Pos->prox;
 		}
@@ -231,7 +249,7 @@ void ExibirUltimoProcesso(Processo *Pilha)              //Exibe o processo na BA
 	Clock_ExibeUltimo = clock() - Clock_ExibeUltimo;
 }
 
-void libera(Processo *Pilha)                            //Libera todos os espaco alocado da Pilha na memoria
+void libera(Processo *Pilha)                            //Libera todos os espa�o alocado da Pilha
 {
     Clock_LimpaTudo=0;
     Clock_LimpaTudo = clock();
@@ -246,101 +264,106 @@ void libera(Processo *Pilha)                            //Libera todos os espaco
 			proxNo = atual->prox;
 
 			free(atual);
-			atual = proxNo;     //atual recebe o proximo no e o laco continua se repetindo ate que a pilha seja apagada
+			atual = proxNo;     //atual recebe o proximo n� e o lo�o continua se repetindo at� que a pilha seja apagada
 		}
 	}
     Clock_LimpaTudo = clock() - Clock_LimpaTudo;
 }
 
-void EmpilharProcesso(Processo *Pilha)                  //Inserir procesos na pilha
+void EmpilharProcesso(Processo *Pilha, int loop)                  //Iser��o de n�s na pilha
 {
-    Clock_Insere=0;
-    float Clock_Pause=0;
-    Clock_Pause = clock();
+//    Clock_Insere=0;
+//    float Clock_Pause=0;
+//    Clock_Insere = clock();
 
-	Processo *novo=(Processo*) malloc(sizeof(Processo));		//Cria um novo no da estrutura na memoria e o ponteiro 'novo' ponta para esse no
-	Processo *UltimoElemento= NULL;
 
-	if(novo == NULL){											// Se o ponteiro novo apontar para NULL e nao pra nova estrutura, significa que nao tem mais memoria no computador e o programa termina
-		printf("Sem memoria disponivel!\n");
-		exit(1);
-	}
-	else														// Se tiver memoria o usuario ira inserir os dados nesse novo no 'novo'.
-	{
-		novo->ID = ++GeraID;
-        Clock_Pause = clock() - Clock_Pause;    				// Pausa a contagem do tempo para esperar o scanf.
-        fflush(stdin);
-        printf("Valor do Cheque: ");
-        scanf("%f", &novo->ValorCheque);
-        printf("Data do Cheque: ");
-        fflush(stdin);
-        scanf("\n\r%[^\n]", &novo->DataCheque);
-        printf("Nome do Estabelecimento: ");
-        scanf("\n\r%[^\n]", &novo->NomeMercado);
-        printf("Nome do Cliente: ");
-        scanf("\n\r%[^\n]", &novo->NomeCliente);
-        printf("RG do Cliente: ");
-        scanf("\n\r%[^\n]", &novo->RGCliente);
-        printf("Endereco do Cliente: ");
-        scanf("\n\r%[^\n]", &novo->EnderecoCliente);
-        printf("Telefone do Cliente: ");
-        scanf("\n\r%[^\n]", &novo->TelefoneCliente);
+		Processo *novo=(Processo*) malloc(sizeof(Processo));
+		Processo *UltimoElemento= NULL;
 
-        Clock_Insere = clock();
-		novo->prox = NULL;
-
-		if(teste_vazia(Pilha))
-			Pilha->prox= novo;									//Se a pilha estiver vazia 'novo' sera o primeiro no da pilha
+		if(novo == NULL){
+			printf("Sem memoria disponivel!\n");
+			exit(1);
+		}
 		else
 		{
 
-		   UltimoElemento= Pilha->prox;							// aponta pro primeiro elemento
+				novo->ID = ++GeraID;
 
-			while(UltimoElemento->prox != NULL)					// UltimoElemento percorre toda a pilha ate achar o ultimo elemento
+				novo->ValorCheque = loop;
+
+				strcpy(novo->DataCheque,"02/04/2014");
+
+				if(loop == MAX-1)
+					strcpy(novo->NomeMercado , "mercado1");
+				else
+					strcpy(novo->NomeMercado , "mercado2");		//Usar esse no teste
+
+				strcpy(novo->NomeCliente , "Igor Andrade");
+
+				strcpy(novo->RGCliente, "123456");
+
+				strcpy(novo->EnderecoCliente, "Rua Barao de Jeremoabo - PAF3");
+
+				strcpy(novo->TelefoneCliente, "7135341335");
+
+				novo->prox = NULL;
+
+
+			if(teste_vazia(Pilha))
+				Pilha->prox= novo;//Se a pilha estiver vazia novo ser� o primeiro n� da pilha
+			else
 			{
-				UltimoElemento = UltimoElemento->prox;
+
+			   UltimoElemento= Pilha->prox;		// aponta pro primeiro elemento
+
+				while(UltimoElemento->prox != NULL)
+				{
+					UltimoElemento = UltimoElemento->prox;
+				}
+
+				UltimoElemento->prox = novo;
+
+				OrganizarUltimoProcesso(Pilha);
 			}
 
-			UltimoElemento->prox = novo;						// O no da pilha (onde UltimoElemento ta apontando) vai apontar para o novo no (e este passara a ser o ultimo).
-
-			OrganizarUltimoProcesso(Pilha);						// A pilha eh enviada para a funcao 'OrganizarUltimoProcesso' que vai pegar o ultimo no (o que acabamos de inserir na pilha) e organizar de acordo ao valor do cheque
+			QuantidadeProcessos++;
 		}
 
-		QuantidadeProcessos++;									// Incrementa a quantidade de processos.
-	}
-	Clock_Insere = clock() - Clock_Insere + Clock_Pause;
+
+
+	//Clock_Insere = clock() - Clock_Insere;
 }
 
 void OrganizarUltimoProcesso(Processo *Pilha)           //Funcao que pega o ultimo No da Pilha e organiza no meio da Pilha de acordo ao valor do Cheque
 {
-	Processo *UltimoElemento = Pilha;		//Guardar o ultimo Elemento para verificar se ele eh menor que os anteriores
-	Processo *PenultimoElemento = Pilha;	//Se UltimoElemento for menor, PenultimoElemento vai apontar para NULL, ja que UltimoElemento nao estara mais no topo da pilha
+	Processo *UltimoElemento = Pilha;		//Guardar o ultimo Elemento para verificar se ele � menor que os anteriores
+	Processo *PenultimoElemento = Pilha;	//Se UltimoElemento for menor, PenultimoElemento vai apontar para NULL, j� que UltimoElemento n�o estar� mais no topo da pilha
 	Processo *Ant = Pilha->prox;			//Se ultimoElemento estiver entre Ant e Pos, Ant vai apontar pra UltimoElemento
 	Processo *Pos = Pilha->prox;			//Se ultimoElemento estiver entre Ant e Pos, UltimoElemento vai apontar pra Pos;
-	int ComecaAnt =0;				        //Serve para forcar PenultimoElemento ficar um no atras de UltimoElemento, tem a mesma relacao com Ant e Pos;
+	int ComecaAnt =0;				        //Serve para for�ar PenultimoElemento ficar um n� atr�s de UltimoElemento, tem a mesma rela��o com Ant e Pos;
 
-	while(UltimoElemento->prox != NULL) 						//acha o ultimo elemento da pilha e Penultimo Elemento e guarda esses valores;
+	while(UltimoElemento->prox != NULL) //achar o ultimo elemento da pilha e Penultimo Elemento e guarda esses valores;
 	{
 		UltimoElemento = UltimoElemento->prox;
-		if(ComecaAnt>0) 										// Forca Ant ficar um no atras de Pos, PenultimoElemento so vai comecar a percorrer a partir do segundo loop do while.
+		if(ComecaAnt>0) // Forca Ant ficar um no atras de Pos
 		{
 			PenultimoElemento = PenultimoElemento->prox;
 		}
 		ComecaAnt++;
 	}
-	if(Pilha->prox->ValorCheque > UltimoElemento->ValorCheque)	// Verifica se o UltimoElemento eh menor que o primeiro da Pilha. Aqui so trata esse caso, do segundo em diante eh tratado no else.
+	if(Pilha->prox->ValorCheque > UltimoElemento->ValorCheque)	// Verifica se o UltimoElemento � menor que o primeiro da Pilha
 	{
 
 		UltimoElemento->prox = Pilha->prox;
 		Pilha->prox = UltimoElemento;
-		PenultimoElemento->prox = NULL; 						//Transforma PenultimoElemento em Ultimo Elemento da Pilha;
+		PenultimoElemento->prox = NULL; //Transforma PenultimoElemento em Ultimo Elemento da Pilha;
 	}
 	else
 	{
 		ComecaAnt =0;
 		Ant = Pilha->prox;
-		while((Pos->prox != NULL) && (Pos->ValorCheque <= UltimoElemento->ValorCheque) )	// Enquanto nao chegar no final da pilha e o valor do novo cheque for maior entra nesse laço;
-		{																					// Nesse while ele pode sair ou por ter chegado no final da pilha ou pq o cheque do UltimoElemento é maior
+		while((Pos->prox != NULL) && (Pos->ValorCheque <= UltimoElemento->ValorCheque) )	// Enquanto n�o chegar no final da pilha e o valor do novo cheque for maior entra aqui;
+		{
 			Pos = Pos->prox;
 			if(ComecaAnt>0) // Forca Ant ficar um no atras de Pos
 			{
@@ -349,23 +372,24 @@ void OrganizarUltimoProcesso(Processo *Pilha)           //Funcao que pega o ulti
 			}
 			ComecaAnt++;
 		}
-		if(Pos->ValorCheque > UltimoElemento->ValorCheque)		//Se saiu do while anterior por causa da tamanho do cheque, entao ele ira inserir o valor no intervalo (meio da pilha) correto e transformar o PenultimoElemento no ultimo no da pilha;
+		if(Pos->ValorCheque > UltimoElemento->ValorCheque)		//Se saiu do while anterior por causa da tamanho do cheque, ent�o ele ir� inserir o valor no intervalo correto e transformar o PenultimoElemento em UltimoElemento da pilha;
 		{
 			PenultimoElemento->prox = NULL;
+
 			UltimoElemento->prox = Pos;
 			Ant->prox = UltimoElemento;
 		}
 	}
 }
 
-void OrganizaProcessoPorNomeMercado(Processo *Pilha)    //Verifica os processos de um mercado para organizar no TOPO da Pilha
+void OrganizaProcessoPorNomeMercado(Processo *Pilha, char *Mercado)    //Verifica os processos de um mercado para organizar no TOPO da Pilha
 {
-    Clock_OrganizaPorNome=0;
-    float Clock_Pause=0;
-    Clock_Pause = clock();
+//    Clock_OrganizaPorNome=0;
+//    float Clock_Pause=0;
+//    Clock_Pause = clock();
 
-    char Mercado [31];
-	Processo *PilhaAux=(Processo*) malloc(sizeof(Processo));	//Cria um novo no da estrutura na memoria e o ponteiro 'PilhaAux' ponta para esse no
+//    char Mercado [31];
+	Processo *PilhaAux=(Processo*) malloc(sizeof(Processo));
 	if(PilhaAux == NULL)
     {
 		printf("Sem memoria disponivel!\n");
@@ -373,29 +397,31 @@ void OrganizaProcessoPorNomeMercado(Processo *Pilha)    //Verifica os processos 
 	}
 
 	PilhaAux->prox = NULL;
+//    int ComecaAnt = 0;
 	Processo *Pos = Pilha->prox;
 	Processo *Ant = Pilha;
 	Processo *CorrePilhaAux = PilhaAux;
     Processo *NovoElementoAux = NULL;
 
-    printf("Informe o nome do Estabelecimento para reordenar no topo: ");
-    Clock_Pause = clock() - Clock_Pause;    // Pausa a contagem do tempo para esperar o scanf.
-    scanf("%s",&Mercado);
-    Clock_OrganizaPorNome = clock();
+ //   printf("Informe o nome do Estabelecimento para reordenar no topo: ");
+//    Clock_Pause = clock() - Clock_Pause;    // Pausa a contagem do tempo para esperar o scanf.
+//    fflush(stdin);
+//    gets(Mercado);
+//    Clock_OrganizaPorNome = clock();
 
     if(!teste_vazia(Pilha))
     {
-        while(Pos->prox != NULL)            //Percorre a Pilha Principal ate o ultimo elemento apontar para NULL.
+        while(Pos->prox != NULL)            //Percorre a Pilha Principal at� o ultimo elemento apontar para NULL.
         {
-            if(stricmp(Mercado,Pos->NomeMercado) != 0)      // Se entrar no if eh pq o nome do mercado pesquisado e o nome para qual Pos aponta sao diferentes, entao Ant e Pos avanca nos nOs da Pilha principal.
+            if(stricmp(Mercado,Pos->NomeMercado) != 0)      // Se entrar aqui � pq � diferente, ent�o avan�a os n�s da Pilha principal.
             {
                 Ant = Ant->prox;
                 Pos = Pos->prox;
             }
-            else                            //Entrando aqui os nomes sao iguais, entao ele ira passar esse no para a pilhaaux e vai retirar da Pilha Principal.
+            else                            //Entrando aqui � pq � Igual, ent�o ele ir� passar o novo elemento para a pilhaaux e retirar da Pilha Principal.
             {
                 NovoElementoAux = Pos;
-                if(Pos->prox != NULL)           //Verifica se o proximo aponta para NULL para avanca com Pos e Ant;
+                if(Pos->prox != NULL)           //Verifica se o pr�ximo aponta para NULL para avan�a com Pos e Ant;
                 {
                     Pos = Pos->prox;
                     Ant->prox = Pos;
@@ -408,21 +434,21 @@ void OrganizaProcessoPorNomeMercado(Processo *Pilha)    //Verifica os processos 
             }
         }
 
-        if(stricmp(Mercado,Pos->NomeMercado) == 0)      //Esse if so verifica o ultimo elemento da Pilha principal, pois nao da pra tratar no id acima.
+        if(stricmp(Mercado,Pos->NomeMercado) == 0)      //Resolve o ultimo n�;
         {
-            while(CorrePilhaAux->prox != NULL)			//Se o ultimo for igual, este no passara para a Pilha Aux.
+            while(CorrePilhaAux->prox != NULL)
                 CorrePilhaAux = CorrePilhaAux->prox;
             CorrePilhaAux->prox = Pos;
-            Ant->prox = PilhaAux->prox;         		//Ao final, o ultimo elementos que sobrarou da Pilha Principal(ou o ponteiro, caso nao tenha sobrado nenhum) apontara para o primeiro da da PilhaAux, A pilha principal esta completa e organizada.
+            Ant->prox = PilhaAux->prox;         //Junta as Pilhas;
         }
-        else											//Vai entrar aqui o ultimo elemento nao for igual, nao entrando no if logo acima.
+        else
         {
-            Pos->prox = PilhaAux->prox;         		//Ao final, o ultimo elementos que sobrarou da Pilha Principal(ou o ponteiro, caso nao tenha sobrado nenhum) apontara para o primeiro da da PilhaAux, A pilha principal esta completa e organizada.
+            Pos->prox = PilhaAux->prox;         //Junta as Pilhas;
         }
     }
     else
         printf("Pilha de Processos vazia!\n");
-    Clock_OrganizaPorNome = clock() - Clock_OrganizaPorNome + Clock_Pause;
+ //   Clock_OrganizaPorNome = clock() - Clock_OrganizaPorNome + Clock_Pause;
 }
 
 void ApagarID(Processo *Pilha)                          //Apaga um processo com o ID informado.
@@ -442,14 +468,14 @@ void ApagarID(Processo *Pilha)                          //Apaga um processo com 
     Clock_ApagaID = clock();
     if(Pilha->prox != NULL)
     {
-        while(Pos->prox != NULL)            //Percorre a Pilha Principal ate o ultimo elemento apontar para NULL. Ou seja, ele compara ate o penultimo item,
+        while(Pos->prox != NULL)            //Percorre a Pilha Principal at� o ultimo elemento apontar para NULL. Ou seja, ele compara at� o penultimo �tem,
         {
-            if(ApagarEsteID != Pos->ID)      // Se entrar aqui eh pq eh diferente, entao avanca os nos da Pilha principal.
+            if(ApagarEsteID != Pos->ID)      // Se entrar aqui � pq � diferente, ent�o avan�a os n�s da Pilha principal.
             {
                 Ant = Ant->prox;
                 Pos = Pos->prox;
             }
-            else                            //Entrando aqui eh pq eh Igual, entao ele ira passar o novo elemento para a pilhaaux e retirar da Pilha Principal.
+            else                            //Entrando aqui � pq � Igual, ent�o ele ir� passar o novo elemento para a pilhaaux e retirar da Pilha Principal.
             {
                 Pos = Pos->prox;
                 LiberaNo = Ant->prox;
@@ -461,7 +487,7 @@ void ApagarID(Processo *Pilha)                          //Apaga um processo com 
                 return;
             }
         }
-        if(ApagarEsteID == Pos->ID)     // Verifica se o No procurado eh o ultimo
+        if(ApagarEsteID == Pos->ID)     // Verifica se o No procurado � o ultimo
         {
             LiberaNo = Pos;
             Ant->prox = NULL;
@@ -477,16 +503,16 @@ void ApagarID(Processo *Pilha)                          //Apaga um processo com 
     Clock_ApagaID = clock() - Clock_ApagaID + Clock_Pause;
 }
 
-void Apagar(Processo *Pilha)                            //Apaga (desempilha) um no da pilha. O ultimo elemento inserido.
+void Apagar(Processo *Pilha)                            //Apaga um n� da pilha. O ultimo elemento inserido.
 {
-    Clock_Apaga = 0;
-    Clock_Apaga = clock();
+//    Clock_Apaga = 0;
+//    Clock_Apaga = clock();
 	Processo *ult=NULL, *pnult=NULL;
 
 	if(Pilha->prox == NULL)
 	{
 		printf("Pilha vazia\n\n");
-        Clock_Apaga = clock() - Clock_Apaga;
+//        Clock_Apaga = clock() - Clock_Apaga;
 		return;
 	}
 	else
@@ -502,8 +528,8 @@ void Apagar(Processo *Pilha)                            //Apaga (desempilha) um 
 
 		pnult->prox = NULL;
 		QuantidadeProcessos--;
-		printf("Processo ID: %d retirado. \n\n", ult->ID);
+		//printf("Processo ID: %d retirado. \n\n", ult->ID);
 		free(ult);
 	}
-	Clock_Apaga = clock() - Clock_Apaga;
+//	Clock_Apaga = clock() - Clock_Apaga;
 }

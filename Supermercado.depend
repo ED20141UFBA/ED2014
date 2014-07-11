@@ -32,3 +32,21 @@
 	<string.h>
 	"funcoes.h"
 
+1405062227 source:c:\users\igor\documents\github\processossupermercado\funcoes.c
+	"funcoes.h"
+
+1405040239 c:\users\igor\documents\github\processossupermercado\funcoes.h
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<conio.h>
+	<string.h>
+
+1405060288 source:c:\users\igor\documents\github\processossupermercado\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<conio.h>
+	<string.h>
+	"funcoes.h"
+
