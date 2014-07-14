@@ -11,7 +11,6 @@ int main()	// Funcao principal
 {
 
 	Processo *Pilha = (Processo *) malloc(sizeof(Processo));
-
 	if(Pilha== NULL){
 		printf("Memoria Indisponivel.\n");
 		exit(1);
