@@ -1,6 +1,10 @@
 :: Como usar.
 
-Para utilizar a versão 5.5 do nosso software, inicialmente devemos selecionar uma das 10 opções válidas do menu:
+Para utilizar a versão 5.5 do nosso software, basta executar o arquivo "Supermercado.cbp" que é uma modularização do Code::Blocks (Windows), ou então compilar os arquivos: main.c ; funcoes.h e funcoes.c separadamente.
+Não garantimos que o programa vá funcionar em nenhuma outra plataforma que não seja Windows, utilizando Code::Blocks ou o DEV-C++ (No DEC-C++ compilar abrindo os arquivos: main.c ; funcoes.h  e funcoes.c).
+No repositório possui a pasta "AnaliseComplexidade" que tem uma versão do software modificada para receber vários processos de uma só vez, utilizado para testes e Analise de Complexidade.
+
+Inicialmente devemos selecionar uma das 10 opções válidas do menu:
 
 0 - Inserir novo Processo        
 1 - Apagar Ultimo Processo       
