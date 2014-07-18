@@ -19,25 +19,22 @@ void Menu(Processo *Pilha)                              //Menu e chamada para as
 	int op;
 	char Mercado[31];
 
-	printf("Informe o tamanho da Pilha: ");
-	scanf("%d", &MAX);
-
 	while(1)
 	{
         system("cls");
         printf("    Selecione a operacao desejada:   \n\n");
         printf(" %c%c%c%c%c%c%c%c%c%c%c%c%c%c%c MENU %c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c ANALISE %c%c%c%c%c%c%c%c%c%c%c\n",201,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,203,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,187);
         printf(" %c                                  %c                             %c\n",186,186,186);
-        printf(" %c 0 - xInserir novo Processo        %c %c Tempo Execucao: %f  %c\n",186,186,26, ((double)(Clock_Insere)/CLOCKS_PER_SEC),186);
-        printf(" %c 1 - xApagar Ultimo Processo       %c %c Tempo Execucao: %f  %c\n",186,186,26, ((double)(Clock_Apaga)/CLOCKS_PER_SEC),186);
+        printf(" %c 0 - Inserir novo Processo        %c %c Tempo Execucao: %f  %c\n",186,186,26, ((double)(Clock_Insere)/CLOCKS_PER_SEC),186);
+        printf(" %c 1 - Apagar Ultimo Processo       %c %c Tempo Execucao: %f  %c\n",186,186,26, ((double)(Clock_Apaga)/CLOCKS_PER_SEC),186);
         printf(" %c 2 - Apagar um Processo pelo ID   %c %c Tempo Execucao: %f  %c\n",186,186,26, ((double)(Clock_ApagaID)/CLOCKS_PER_SEC),186);
-        printf(" %c 3 - -Exibir Pilha de Processos    %c %c Tempo Execucao: %f  %c\n",186,186,26, ((double)(Clock_ExibeTudo)/CLOCKS_PER_SEC),186);
+        printf(" %c 3 - Exibir Pilha de Processos    %c %c Tempo Execucao: %f  %c\n",186,186,26, ((double)(Clock_ExibeTudo)/CLOCKS_PER_SEC),186);
         printf(" %c 4 - Exibir por ID                %c %c Tempo Execucao: %f  %c\n",186,186,26, ((double)(Clock_ExibeID)/CLOCKS_PER_SEC),186);
         printf(" %c 5 - Exibir proximo Processo      %c %c Tempo Execucao: %f  %c\n",186,186,26, ((double)(Clock_ExibeProximo)/CLOCKS_PER_SEC),186);
         printf(" %c 6 - Exibir ultimo Processo       %c %c Tempo Execucao: %f  %c\n",186,186,26, ((double)(Clock_ExibeUltimo)/CLOCKS_PER_SEC),186);
         printf(" %c 7 - Tamanho da Pilha             %c %c Tempo Execucao: %f  %c\n",186,186,26, ((double)(Clock_ExibeTamanho)/CLOCKS_PER_SEC),186);
-        printf(" %c 8 - xLimpar Pilha                 %c %c Tempo Execucao: %f  %c\n",186,186,26, ((double)(Clock_LimpaTudo)/CLOCKS_PER_SEC),186);
-        printf(" %c 9 - xOrganiza por Nome de Mercado %c %c Tempo Execucao: %f  %c\n",186,186,26, ((double)(Clock_OrganizaPorNome)/CLOCKS_PER_SEC),186);
+        printf(" %c 8 - Limpar Pilha                 %c %c Tempo Execucao: %f  %c\n",186,186,26, ((double)(Clock_LimpaTudo)/CLOCKS_PER_SEC),186);
+        printf(" %c 9 - Organiza por Nome de Mercado %c %c Tempo Execucao: %f  %c\n",186,186,26, ((double)(Clock_OrganizaPorNome)/CLOCKS_PER_SEC),186);
         printf(" %c                                  %c                             %c\n",186,186,186);
         printf(" %c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c\n",200,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,202,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,188);
         printf("\n\tOpcao: ");
@@ -47,12 +44,13 @@ void Menu(Processo *Pilha)                              //Menu e chamada para as
         {
             case 0: // Inserir novo Processo
                 {
+                	printf("Inserir quantos processos: ");
+                	scanf("%d", &MAX);
+
                 	Clock_Insere = clock();
                 	for(loop=0; loop<MAX; loop++)
 					{
-						EmpilharProcesso(Pilha, loop);
-						if(loop % 5000 == 0)
-							printf("\naqui: %d", loop);
+						EmpilharProcesso(Pilha);
 					}
 					printf("\n");
 					Clock_Insere = clock()- Clock_Insere;
@@ -61,6 +59,8 @@ void Menu(Processo *Pilha)                              //Menu e chamada para as
                 }
             case 1: // Inserir novo Processo
                 {
+					printf("Apagar quantos processos: ");
+                	scanf("%d", &MAX);
                 	Clock_Apaga = clock();
                 	for(loop=0; loop<MAX; loop++)
 						Apagar(Pilha);
@@ -270,12 +270,12 @@ void libera(Processo *Pilha)                            //Libera todos os espaï¿
     Clock_LimpaTudo = clock() - Clock_LimpaTudo;
 }
 
-void EmpilharProcesso(Processo *Pilha, int loop)                  //Iserï¿½ï¿½o de nï¿½s na pilha
+void EmpilharProcesso(Processo *Pilha)                  //Iserï¿½ï¿½o de nï¿½s na pilha
 {
 //    Clock_Insere=0;
 //    float Clock_Pause=0;
 //    Clock_Insere = clock();
-
+		int i;
 
 		Processo *novo=(Processo*) malloc(sizeof(Processo));
 		Processo *UltimoElemento= NULL;
@@ -289,14 +289,19 @@ void EmpilharProcesso(Processo *Pilha, int loop)                  //Iserï¿½ï¿½o 
 
 				novo->ID = ++GeraID;
 
-				novo->ValorCheque = loop;
+				i = MAX - (novo->ID);
+
+				if(i<0)
+					i=i*(-1);
+
+				novo->ValorCheque = (float)i;
 
 				strcpy(novo->DataCheque,"02/04/2014");
 
-				if(loop == MAX-1)
+				if(novo->ID % 2 == 0 )
 					strcpy(novo->NomeMercado , "mercado1");
 				else
-					strcpy(novo->NomeMercado , "mercado2");		//Usar esse no teste
+					strcpy(novo->NomeMercado , "mercado2");
 
 				strcpy(novo->NomeCliente , "Igor Andrade");
 

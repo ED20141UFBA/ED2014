@@ -3,13 +3,13 @@
 #include <time.h>
 #include <conio.h>
 #include <string.h>
-#include "funcoes.h"
+#include "funcoes.c"
 
 
-       
+
 int main()	// Fun��o principal
 {
-	
+
 	Processo *Pilha = (Processo *) malloc(sizeof(Processo));
 
 	if(Pilha== NULL){

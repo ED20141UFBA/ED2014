@@ -27,7 +27,7 @@ void Inicializar(Processo *Pilha);			// Inicializa a Pilha
 int teste_vazia(Processo *Pilha);			// Verifica se a pilha está vazia
 void ExibirProcessos(Processo *Pilha);			// Exibe todos os processos
 void libera(Processo *Pilha);				// Limpa a pilha
-void EmpilharProcesso(Processo *Pilha, int loop);			// Empilha
+void EmpilharProcesso(Processo *Pilha);			// Empilha
 void Apagar(Processo *Pilha);				// Desempilha
 void OrganizarUltimoProcesso(Processo *Pilha);		// A função EmpilharProcesso insere um processo sempre no topo da pilha, essa função remaneja para a posição correta.
 void OrganizaProcessoPorNomeMercado(Processo *Pilha, char *Mercado);	// Ordena todos os processos com o nome pesquisado para o topo da pilha
