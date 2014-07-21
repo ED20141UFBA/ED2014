@@ -17,3 +17,24 @@
 1405058216 source:c:\users\igor\documents\github\processossupermercado\analisecomplexidade\funcoes.c
 	"funcoes.h"
 
+1405906986 source:d:\dri\github\processossupermercado\analisecomplexidade\funcoes.c
+	"funcoes.h"
+
+1405906986 d:\dri\github\processossupermercado\analisecomplexidade\funcoes.h
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<conio.h>
+	<string.h>
+
+1405906986 source:d:\dri\github\processossupermercado\analisecomplexidade\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<conio.h>
+	<string.h>
+	"funcoes.c"
+
+1405906986 d:\dri\github\processossupermercado\analisecomplexidade\funcoes.c
+	"funcoes.h"
+

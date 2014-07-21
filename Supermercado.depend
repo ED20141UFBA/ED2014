@@ -50,3 +50,21 @@
 	<string.h>
 	"funcoes.h"
 
+1405906987 source:d:\dri\github\processossupermercado\funcoes.c
+	"funcoes.h"
+
+1405906987 d:\dri\github\processossupermercado\funcoes.h
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<conio.h>
+	<string.h>
+
+1405906987 source:d:\dri\github\processossupermercado\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<conio.h>
+	<string.h>
+	"funcoes.h"
+
